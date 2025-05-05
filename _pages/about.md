@@ -1,8 +1,24 @@
 ---
+layout: single
+title: "About Me"
 permalink: /about/
-title: "About"
+author_profile: true
 ---
 
-Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt aliquip amet commodo labore. Ut eu pariatur aute ea aute excepteur laborum. Esse ea esse excepteur minim mollit qui cillum excepteur ex dolore magna. Labore deserunt fugiat incididunt incididunt sint ea. Consequat dolore aute laboris quis proident quis non et est consectetur ex eiusmod sit culpa.
+Hi, I’m **Aidynbek Mussa**, a data analyst and economist passionate about solving complex problems with data. I bring a unique blend of quantitative skills, economic insight, and systems thinking to turn raw information into meaningful impact.
 
-Cupidatat ea do et in excepteur in. Ad nostrud ut est esse eu duis ea sunt eiusmod. Aliquip tempor veniam sint elit fugiat. Velit incididunt laboris amet incididunt labore dolore irure velit excepteur commodo deserunt laborum. Consectetur eu fugiat veniam veniam Lorem labore magna eiusmod. Ea occaecat reprehenderit pariatur consectetur minim labore ut aliquip.
+I hold a **Master’s in Management and Systems (Enterprise Risk concentration)** from NYU and a **Bachelor of Science in Economics and Mathematics** from Nazarbayev University. My career began at the **National Bank of Kazakhstan**, where I worked on macroeconomic forecasting, policy modeling, and IMF technical projects.
+
+Now based in New York, I focus on combining analytics, engineering, and storytelling to build smart solutions. My interests span:
+- **Data science & machine learning**
+- **Graph databases (Neo4j, GTD terrorism analysis)**
+- **ETL pipeline engineering**
+- **AI in education & public policy**
+
+I’ve built real-world projects ranging from NYC crime clustering to gas price dashboards for small businesses. I’m currently exploring how GenAI and automation can reskill workforces and streamline public services.
+
+Outside of work, I co-develop **GetEnglish**, an AI-powered language learning assistant on Telegram.
+
+Let’s connect — [LinkedIn](https://www.linkedin.com/in/aidynbekmussa/) | [GitHub](https://github.com/aidynbek)
+
+---
