@@ -57,16 +57,12 @@ plugins:
 
 author:
   name: Aidynbek Mussa
-  avatar : "/assets/images/bio-photo.jpg"
+  avatar : "/assets/images/bio-photo.JPG"
   bio: Data analyst and economist passionate about turning analytics into action.
   email: aidynbek.mussa@columbia.edu
   github: aidynbekmussa2000
   linkedin: aidynbekmussa
   location: New York, NY
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/aidynbekmussa2000"
 
 defaults:
   # _posts
