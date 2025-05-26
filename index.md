@@ -1,5 +1,5 @@
 ---
-layout: splash
+layout: single
 title: "Hi!"
 subtitle: "Data Analyst | Economist | Systems Thinker"
 author_profile: true
