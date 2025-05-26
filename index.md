@@ -5,9 +5,9 @@ subtitle: "Data Analyst | Economist | Systems Thinker"
 author_profile: true
 ---
 
-Welcome! I’m **Aidynbek Mussa**, a data analyst and economist with a passion for using data to drive smarter decisions in business, government, and society.
+Welcome! I’m **Aidynbek**, a data analyst and economist with a skilled for using data to drive smarter decisions in business, government, and society.
 
-With experience spanning **macroeconomic forecasting**, **AI tools**, **graph analytics**, and **machine learning**, I love transforming messy data into insights that matter.
+With experience spanning **macroeconomic forecasting**, **Business Intelligence**, and **machine learning**, I love transforming messy data into insights that matter.
 
 ### 📌 Featured Projects
 - 🗽 [NYC Crime Clustering Analysis](./projects/nyc-crime)
