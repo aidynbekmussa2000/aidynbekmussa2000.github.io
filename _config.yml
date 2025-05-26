@@ -61,21 +61,21 @@ author:
   bio: Data analyst and economist turning analytics into action.
   location: New York, NY
   links:
-    - label: "Email: aidynbek.mussa@columbia.edu"
+    - label: "aidynbek.mussa@columbia.edu"
       icon: "fas fa-envelope"
       url: "mailto:aidynbek.mussa@columbia.edu"
 
-    - label: "Telegram: @aidynthecreator"
-      icon: "fab fa-telegram"
-      url: "https://t.me/aidynthecreator"
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://linkedin.com/in/aidynbekmussa"
 
     - label: "GitHub"
       icon: "fab fa-github"
       url: "https://github.com/aidynbekmussa2000"
 
-    - label: "LinkedIn"
-      icon: "fab fa-linkedin"
-      url: "https://linkedin.com/in/aidynbekmussa"
+    - label: "Telegram"
+      icon: "fab fa-telegram"
+      url: "https://t.me/aidynthecreator"
 
 defaults:
   # _posts
