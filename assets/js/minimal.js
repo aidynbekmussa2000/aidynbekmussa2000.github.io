@@ -228,21 +228,20 @@
     const savedTheme = localStorage.getItem('theme');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
+    // Set initial theme
     if (savedTheme) {
       document.documentElement.setAttribute('data-theme', savedTheme);
-    } else if (!systemPrefersDark) {
-      document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+      // Default to dark mode (site's default theme)
+      document.documentElement.setAttribute('data-theme', systemPrefersDark ? 'dark' : 'light');
     }
 
     toggle.addEventListener('click', () => {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
       document.documentElement.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
-
-      // Add transition class for smooth color changes
-      document.body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
     });
 
     // Listen for system theme changes

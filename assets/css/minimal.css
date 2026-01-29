@@ -49,6 +49,7 @@ body {
   background: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
@@ -1280,20 +1281,22 @@ a {
   background: var(--color-surface);
 }
 
+/* Dark mode (default): show sun icon to switch to light */
 .theme-toggle .icon-sun {
-  display: none;
+  display: block;
 }
 
 .theme-toggle .icon-moon {
-  display: block;
+  display: none;
 }
 
+/* Light mode: show moon icon to switch to dark */
 [data-theme="light"] .theme-toggle .icon-sun {
-  display: block;
+  display: none;
 }
 
 [data-theme="light"] .theme-toggle .icon-moon {
-  display: none;
+  display: block;
 }
 
 /* ================================
