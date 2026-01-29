@@ -12,14 +12,15 @@
   document.addEventListener('DOMContentLoaded', init);
 
   function init() {
+    // Enable JS-dependent features
+    document.body.classList.add('js-enabled');
+
     initNavigation();
     initMobileMenu();
-    initScrollAnimations();
     initSmoothScroll();
     initSkillBars();
     initTimeline();
     initThemeToggle();
-    initTypewriter();
     initScrollReveal();
   }
 
@@ -78,37 +79,6 @@
   }
 
   // ================================
-  // SCROLL ANIMATIONS
-  // ================================
-
-  function initScrollAnimations() {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    // Observe elements with animation
-    const animatedElements = document.querySelectorAll(
-      '.section-title, .about-text, .about-details, .project-card, .skill-category, .contact-card'
-    );
-
-    animatedElements.forEach((el, index) => {
-      el.style.animationDelay = `${index * 0.1}s`;
-      observer.observe(el);
-    });
-  }
-
-  // ================================
   // SMOOTH SCROLL
   // ================================
 
@@ -161,26 +131,26 @@
   // ================================
 
   function initTimeline() {
-    const timeline = document.querySelector('.timeline-wrapper');
+    const timeline = document.querySelector('.timeline-dual');
     const progress = document.getElementById('timeline-progress');
-    const points = document.querySelectorAll('.timeline-point');
+    const items = document.querySelectorAll('.timeline-item');
 
     if (!timeline || !progress) return;
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Animate progress bar to 95% (current position)
+          // Animate progress bar to 95%
           setTimeout(() => {
             progress.style.width = '95%';
           }, 300);
 
-          // Animate timeline points with stagger
-          points.forEach((point, index) => {
+          // Animate timeline items with stagger
+          items.forEach((item, index) => {
             setTimeout(() => {
-              point.style.opacity = '1';
-              point.style.transform = point.style.transform.replace('translateY(20px)', 'translateY(0)') || 'translateX(-50%)';
-            }, 500 + (index * 250));
+              item.style.opacity = '1';
+              item.style.transform = 'translateX(-50%)';
+            }, 400 + (index * 200));
           });
 
           observer.unobserve(entry.target);
@@ -188,29 +158,27 @@
       });
     }, { threshold: 0.2 });
 
-    // Set initial state for points
-    points.forEach(point => {
-      point.style.opacity = '0';
-      const currentTransform = point.style.transform || '';
-      point.style.transform = currentTransform + ' translateY(20px)';
-      point.style.transition = 'all 0.6s ease';
+    // Set initial state for items
+    items.forEach(item => {
+      item.style.opacity = '0';
+      item.style.transition = 'all 0.6s ease';
     });
 
     observer.observe(timeline);
 
-    // Add hover interaction for timeline points
-    points.forEach(point => {
-      point.addEventListener('mouseenter', () => {
-        points.forEach(p => {
-          if (p !== point) {
-            p.style.opacity = '0.4';
+    // Add hover interaction
+    items.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        items.forEach(i => {
+          if (i !== item) {
+            i.style.opacity = '0.5';
           }
         });
       });
 
-      point.addEventListener('mouseleave', () => {
-        points.forEach(p => {
-          p.style.opacity = '1';
+      item.addEventListener('mouseleave', () => {
+        items.forEach(i => {
+          i.style.opacity = '1';
         });
       });
     });
@@ -253,72 +221,7 @@
   }
 
   // ================================
-  // TYPEWRITER EFFECT
-  // ================================
-
-  function initTypewriter() {
-    const element = document.getElementById('typewriter');
-    if (!element) return;
-
-    const titles = [
-      'Chief Analyst',
-      'Data Engineer',
-      'BI Developer',
-      'Economist',
-      'Problem Solver'
-    ];
-
-    let titleIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let isPaused = false;
-
-    const typeSpeed = 100;
-    const deleteSpeed = 50;
-    const pauseDuration = 2000;
-
-    function type() {
-      const currentTitle = titles[titleIndex];
-
-      if (isPaused) {
-        isPaused = false;
-        isDeleting = true;
-        setTimeout(type, pauseDuration);
-        return;
-      }
-
-      if (isDeleting) {
-        // Deleting
-        element.textContent = currentTitle.substring(0, charIndex - 1);
-        charIndex--;
-
-        if (charIndex === 0) {
-          isDeleting = false;
-          titleIndex = (titleIndex + 1) % titles.length;
-          setTimeout(type, 500);
-          return;
-        }
-      } else {
-        // Typing
-        element.textContent = currentTitle.substring(0, charIndex + 1);
-        charIndex++;
-
-        if (charIndex === currentTitle.length) {
-          isPaused = true;
-          setTimeout(type, typeSpeed);
-          return;
-        }
-      }
-
-      setTimeout(type, isDeleting ? deleteSpeed : typeSpeed);
-    }
-
-    // Start typewriter after a short delay
-    setTimeout(type, 1000);
-  }
-
-  // ================================
-  // ENHANCED SCROLL REVEAL
+  // SCROLL REVEAL
   // ================================
 
   function initScrollReveal() {
