@@ -1388,10 +1388,12 @@ a {
 }
 
 /* Dark mode (default): show sun icon to switch to light */
+[data-theme="dark"] .theme-toggle .icon-sun,
 .theme-toggle .icon-sun {
   display: block;
 }
 
+[data-theme="dark"] .theme-toggle .icon-moon,
 .theme-toggle .icon-moon {
   display: none;
 }
@@ -1405,45 +1407,30 @@ a {
   display: block;
 }
 
-/* ================================
-   TYPEWRITER EFFECT
-   ================================ */
-
+/* Hero title styling */
 .hero-title {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-}
-
-.typewriter {
-  display: inline-block;
-  min-width: 1ch;
-}
-
-.typewriter-cursor {
-  display: inline-block;
-  color: var(--color-accent);
-  font-weight: 300;
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+  color: var(--color-text-secondary);
+  font-size: 1.25rem;
+  font-weight: 400;
 }
 
 /* ================================
    ENHANCED SCROLL REVEAL
    ================================ */
 
+/* Scroll reveal - only animate if JS is enabled */
 .reveal {
-  opacity: 0;
-  transform: translateY(60px);
-  transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1),
-              transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.reveal.revealed {
+.js-enabled .reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.js-enabled .reveal.revealed {
   opacity: 1;
   transform: translateY(0);
 }

@@ -12,14 +12,15 @@
   document.addEventListener('DOMContentLoaded', init);
 
   function init() {
+    // Enable JS-dependent features
+    document.body.classList.add('js-enabled');
+
     initNavigation();
     initMobileMenu();
-    initScrollAnimations();
     initSmoothScroll();
     initSkillBars();
     initTimeline();
     initThemeToggle();
-    initTypewriter();
     initScrollReveal();
   }
 
@@ -74,37 +75,6 @@
         toggle.classList.remove('active');
         menu.classList.remove('active');
       }
-    });
-  }
-
-  // ================================
-  // SCROLL ANIMATIONS
-  // ================================
-
-  function initScrollAnimations() {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    // Observe elements with animation
-    const animatedElements = document.querySelectorAll(
-      '.section-title, .about-text, .about-details, .project-card, .skill-category, .contact-card'
-    );
-
-    animatedElements.forEach((el, index) => {
-      el.style.animationDelay = `${index * 0.1}s`;
-      observer.observe(el);
     });
   }
 
@@ -251,72 +221,7 @@
   }
 
   // ================================
-  // TYPEWRITER EFFECT
-  // ================================
-
-  function initTypewriter() {
-    const element = document.getElementById('typewriter');
-    if (!element) return;
-
-    const titles = [
-      'Chief Analyst',
-      'Data Engineer',
-      'BI Developer',
-      'Economist',
-      'Problem Solver'
-    ];
-
-    let titleIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let isPaused = false;
-
-    const typeSpeed = 100;
-    const deleteSpeed = 50;
-    const pauseDuration = 2000;
-
-    function type() {
-      const currentTitle = titles[titleIndex];
-
-      if (isPaused) {
-        isPaused = false;
-        isDeleting = true;
-        setTimeout(type, pauseDuration);
-        return;
-      }
-
-      if (isDeleting) {
-        // Deleting
-        element.textContent = currentTitle.substring(0, charIndex - 1);
-        charIndex--;
-
-        if (charIndex === 0) {
-          isDeleting = false;
-          titleIndex = (titleIndex + 1) % titles.length;
-          setTimeout(type, 500);
-          return;
-        }
-      } else {
-        // Typing
-        element.textContent = currentTitle.substring(0, charIndex + 1);
-        charIndex++;
-
-        if (charIndex === currentTitle.length) {
-          isPaused = true;
-          setTimeout(type, typeSpeed);
-          return;
-        }
-      }
-
-      setTimeout(type, isDeleting ? deleteSpeed : typeSpeed);
-    }
-
-    // Start typewriter after a short delay
-    setTimeout(type, 1000);
-  }
-
-  // ================================
-  // ENHANCED SCROLL REVEAL
+  // SCROLL REVEAL
   // ================================
 
   function initScrollReveal() {
