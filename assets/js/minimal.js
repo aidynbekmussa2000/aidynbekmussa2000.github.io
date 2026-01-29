@@ -158,26 +158,26 @@
   // ================================
 
   function initTimeline() {
-    const timeline = document.querySelector('.timeline');
+    const timeline = document.querySelector('.timeline-wrapper');
     const progress = document.getElementById('timeline-progress');
-    const items = document.querySelectorAll('.timeline-item');
+    const points = document.querySelectorAll('.timeline-point');
 
     if (!timeline || !progress) return;
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Animate progress bar
+          // Animate progress bar to 85% (current position)
           setTimeout(() => {
-            progress.style.width = '100%';
+            progress.style.width = '85%';
           }, 300);
 
-          // Animate timeline items with stagger
-          items.forEach((item, index) => {
+          // Animate timeline points with stagger
+          points.forEach((point, index) => {
             setTimeout(() => {
-              item.style.opacity = '1';
-              item.style.transform = 'translateY(0)';
-            }, 500 + (index * 200));
+              point.style.opacity = '1';
+              point.style.transform = point.style.transform.replace('translateY(20px)', 'translateY(0)') || 'translateX(-50%)';
+            }, 500 + (index * 250));
           });
 
           observer.unobserve(entry.target);
@@ -185,28 +185,29 @@
       });
     }, { threshold: 0.2 });
 
-    // Set initial state for items
-    items.forEach(item => {
-      item.style.opacity = '0';
-      item.style.transform = 'translateY(20px)';
-      item.style.transition = 'all 0.5s ease';
+    // Set initial state for points
+    points.forEach(point => {
+      point.style.opacity = '0';
+      const currentTransform = point.style.transform || '';
+      point.style.transform = currentTransform + ' translateY(20px)';
+      point.style.transition = 'all 0.6s ease';
     });
 
     observer.observe(timeline);
 
-    // Add hover interaction for timeline items
-    items.forEach(item => {
-      item.addEventListener('mouseenter', () => {
-        items.forEach(i => {
-          if (i !== item) {
-            i.style.opacity = '0.5';
+    // Add hover interaction for timeline points
+    points.forEach(point => {
+      point.addEventListener('mouseenter', () => {
+        points.forEach(p => {
+          if (p !== point) {
+            p.style.opacity = '0.4';
           }
         });
       });
 
-      item.addEventListener('mouseleave', () => {
-        items.forEach(i => {
-          i.style.opacity = '1';
+      point.addEventListener('mouseleave', () => {
+        points.forEach(p => {
+          p.style.opacity = '1';
         });
       });
     });

@@ -109,56 +109,57 @@
   <section class="section section-alt" id="experience">
     <div class="container">
       <h2 class="section-title">Experience</h2>
-      <div class="timeline-container">
-        <div class="timeline">
-          <!-- Timeline Track -->
-          <div class="timeline-track">
-            <div class="timeline-progress" id="timeline-progress"></div>
-          </div>
 
-          <!-- Timeline Items -->
-          <div class="timeline-items">
-            <div class="timeline-item" data-start="2022-12" data-end="2023-06">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-                <span class="timeline-date">Dec 2022 - Jun 2023</span>
-                <h3 class="timeline-title">Analyst</h3>
-                <p class="timeline-company">EY (Ernst & Young)</p>
-                <p class="timeline-desc">Financial analysis and consulting services</p>
-              </div>
-            </div>
+      <!-- Horizontal Timeline -->
+      <div class="timeline-wrapper">
+        <!-- Year Labels -->
+        <div class="timeline-years-top">
+          <span>2022</span>
+          <span>2023</span>
+          <span>2024</span>
+          <span>2025</span>
+        </div>
 
-            <div class="timeline-item" data-start="2023-07" data-end="2024-06">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-                <span class="timeline-date">Jul 2023 - Jun 2024</span>
-                <h3 class="timeline-title">Analyst</h3>
-                <p class="timeline-company">National Bank of Kazakhstan</p>
-                <p class="timeline-desc">Macroeconomic forecasting and commodity price modeling</p>
-              </div>
-            </div>
+        <!-- Timeline Line -->
+        <div class="timeline-line">
+          <div class="timeline-line-progress" id="timeline-progress"></div>
+        </div>
 
-            <div class="timeline-item active" data-start="2024-07" data-end="present">
-              <div class="timeline-marker current"></div>
-              <div class="timeline-content">
-                <span class="timeline-date">Jul 2024 - Present</span>
-                <h3 class="timeline-title">Chief Analyst</h3>
-                <p class="timeline-company">National Bank of Kazakhstan</p>
-                <p class="timeline-desc">Leading analytical projects and economic research</p>
-                <span class="timeline-badge">Current Role</span>
-              </div>
+        <!-- Timeline Points and Cards -->
+        <div class="timeline-points">
+          <div class="timeline-point" style="left: 8%;">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">Dec 2022 - Jun 2023</span>
+              <h3 class="timeline-title">Analyst</h3>
+              <p class="timeline-company">EY (Ernst & Young)</p>
+              <p class="timeline-desc">Financial analysis and consulting services</p>
             </div>
           </div>
 
-          <!-- Timeline Years -->
-          <div class="timeline-years">
-            <span>2022</span>
-            <span>2023</span>
-            <span>2024</span>
-            <span>2025</span>
+          <div class="timeline-point" style="left: 42%;">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">Jul 2023 - Jun 2024</span>
+              <h3 class="timeline-title">Analyst</h3>
+              <p class="timeline-company">National Bank of Kazakhstan</p>
+              <p class="timeline-desc">Macroeconomic forecasting and commodity price modeling</p>
+            </div>
+          </div>
+
+          <div class="timeline-point active" style="left: 75%;">
+            <div class="timeline-dot current"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">Jul 2024 - Present</span>
+              <h3 class="timeline-title">Chief Analyst</h3>
+              <p class="timeline-company">National Bank of Kazakhstan</p>
+              <p class="timeline-desc">Leading analytical projects and economic research</p>
+              <span class="timeline-badge">Current Role</span>
+            </div>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -216,21 +217,21 @@
           <div class="project-header">
             <span class="project-icon">03</span>
             <div class="project-links">
-              <a href="/projects/terrorgraph/" class="project-link" aria-label="View project">
+              <a href="https://app.powerbi.com/view?r=eyJrIjoiYTQ3N2ZiNWItZGE4Ny00ZmMyLWJhNTYtZThmYWU4OTRkMGNiIiwidCI6IjEzZWY1ZWQwLTliZmYtNGE2Yi1hN2IyLTZiOTI4YmYzZmE1ZiIsImMiOjl9" target="_blank" rel="noopener" class="project-link" aria-label="View dashboard">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M7 17L17 7M17 7H7M17 7V17"/>
                 </svg>
               </a>
             </div>
           </div>
-          <h3 class="project-title">TerrorGraph</h3>
+          <h3 class="project-title">Power BI Dashboard</h3>
           <p class="project-description">
-            Graph database analysis of the Global Terrorism Database using Neo4j for network insights.
+            Interactive business intelligence dashboard with data visualization and analytics insights.
           </p>
           <div class="project-tech">
-            <span>Neo4j</span>
-            <span>Cypher</span>
-            <span>Python</span>
+            <span>Power BI</span>
+            <span>DAX</span>
+            <span>Data Modeling</span>
           </div>
         </article>
 
@@ -285,13 +286,13 @@
         <div class="skill-category">
           <h3>Tools & Technologies</h3>
           <div class="skill-tags">
+            <span>Power BI</span>
+            <span>Tableau</span>
             <span>Pandas</span>
             <span>NumPy</span>
             <span>Scikit-learn</span>
             <span>TensorFlow</span>
             <span>PostgreSQL</span>
-            <span>Neo4j</span>
-            <span>Tableau</span>
             <span>Apache Airflow</span>
             <span>Docker</span>
             <span>AWS</span>
