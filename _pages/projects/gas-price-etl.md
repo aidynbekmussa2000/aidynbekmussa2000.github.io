@@ -1,15 +1,19 @@
 ---
-layout: single
+layout: project
 title: "Gasoline Price ETL & Dashboard"
 permalink: /projects/gas-price-etl/
-author_profile: true
+summary: "An end-to-end ETL pipeline and interactive dashboard for tracking and analyzing gasoline price trends, helping businesses monitor fuel costs and make data-driven decisions."
+tech:
+  - Python
+  - PostgreSQL
+  - Apache Airflow
+  - Tableau
+  - Docker
 ---
 
 ## Overview
 
 An end-to-end **ETL pipeline** and interactive **dashboard** for tracking and analyzing gasoline price trends. This project helps small businesses monitor fuel costs and make data-driven decisions.
-
----
 
 ## Dataset
 
@@ -17,28 +21,24 @@ An end-to-end **ETL pipeline** and interactive **dashboard** for tracking and an
 - **Frequency**: Weekly updates
 - **Coverage**: National and regional gasoline prices
 
----
-
 ## Architecture
 
-1. **Extract**
-   - Pull data from EIA REST API
-   - Handle pagination and rate limits
+### Extract
+- Pull data from EIA REST API
+- Handle pagination and rate limits
 
-2. **Transform**
-   - Clean and normalize price data
-   - Calculate rolling averages and trends
-   - Aggregate by region and fuel type
+### Transform
+- Clean and normalize price data
+- Calculate rolling averages and trends
+- Aggregate by region and fuel type
 
-3. **Load**
-   - Store in PostgreSQL database
-   - Maintain historical records
+### Load
+- Store in PostgreSQL database
+- Maintain historical records
 
-4. **Visualize**
-   - Tableau dashboard for real-time monitoring
-   - Trend analysis and forecasting views
-
----
+### Visualize
+- Tableau dashboard for real-time monitoring
+- Trend analysis and forecasting views
 
 ## Key Features
 
@@ -46,13 +46,3 @@ An end-to-end **ETL pipeline** and interactive **dashboard** for tracking and an
 - Historical price comparison
 - Regional price differential analysis
 - Price forecasting using time-series models
-
----
-
-## Tools & Technologies
-
-- `Python`, `Pandas`, `SQLAlchemy`
-- `PostgreSQL`
-- `Apache Airflow` for orchestration
-- `Tableau` for visualization
-- `Docker` for containerization

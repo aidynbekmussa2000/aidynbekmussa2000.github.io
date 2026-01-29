@@ -17,6 +17,7 @@
     initScrollAnimations();
     initSmoothScroll();
     initSkillBars();
+    initTimeline();
   }
 
   // ================================
@@ -149,6 +150,65 @@
     skillBars.forEach(bar => {
       bar.style.width = '0';
       observer.observe(bar);
+    });
+  }
+
+  // ================================
+  // TIMELINE ANIMATION
+  // ================================
+
+  function initTimeline() {
+    const timeline = document.querySelector('.timeline');
+    const progress = document.getElementById('timeline-progress');
+    const items = document.querySelectorAll('.timeline-item');
+
+    if (!timeline || !progress) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Animate progress bar
+          setTimeout(() => {
+            progress.style.width = '100%';
+          }, 300);
+
+          // Animate timeline items with stagger
+          items.forEach((item, index) => {
+            setTimeout(() => {
+              item.style.opacity = '1';
+              item.style.transform = 'translateY(0)';
+            }, 500 + (index * 200));
+          });
+
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    // Set initial state for items
+    items.forEach(item => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(20px)';
+      item.style.transition = 'all 0.5s ease';
+    });
+
+    observer.observe(timeline);
+
+    // Add hover interaction for timeline items
+    items.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        items.forEach(i => {
+          if (i !== item) {
+            i.style.opacity = '0.5';
+          }
+        });
+      });
+
+      item.addEventListener('mouseleave', () => {
+        items.forEach(i => {
+          i.style.opacity = '1';
+        });
+      });
     });
   }
 
