@@ -12,7 +12,7 @@
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="nav" id="nav">
+  <nav class="nav scrolled" id="nav">
     <div class="nav-container">
       <a href="/" class="nav-logo">AM</a>
       <div class="nav-links">
@@ -22,10 +22,21 @@
         <a href="/#skills">Skills</a>
         <a href="/#contact">Contact</a>
       </div>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-      </button>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          </svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -39,57 +50,45 @@
   </div>
 
   <!-- Project Page -->
-  <main class="project-page">
-    <!-- Project Hero -->
-    <section class="project-hero">
-      <div class="container">
-        <div class="project-hero-content">
-          <a href="/#projects" class="project-back">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M19 12H5M12 19l-7-7 7-7"/>
-            </svg>
-            Back to Projects
-          </a>
-          <h1 class="project-page-title">{{ page.title }}</h1>
-          {% if page.tech %}
-          <div class="project-meta">
-            {% for item in page.tech %}
-            <span class="project-meta-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M7 8l-4 4 4 4M17 8l4 4-4 4M14 4l-4 16"/>
-              </svg>
-              {{ item }}
-            </span>
-            {% endfor %}
-          </div>
-          {% endif %}
-          {% if page.summary %}
-          <p class="project-summary">{{ page.summary }}</p>
-          {% endif %}
-        </div>
-      </div>
-    </section>
-
-    <!-- Project Content -->
-    <section class="project-body">
-      <div class="container">
-        {{ content }}
-
+  <article class="project-article">
+    <header class="project-header-section">
+      <div class="container-narrow">
+        <a href="/#projects" class="back-link">
+          <span class="back-arrow">&larr;</span> Projects
+        </a>
+        <h1 class="project-main-title">{{ page.title }}</h1>
+        {% if page.summary %}
+        <p class="project-lead">{{ page.summary }}</p>
+        {% endif %}
         {% if page.tech %}
-        <div class="project-tech-stack">
+        <div class="project-tags">
           {% for item in page.tech %}
           <span>{{ item }}</span>
           {% endfor %}
         </div>
         {% endif %}
       </div>
-    </section>
-  </main>
+    </header>
+
+    <div class="project-content">
+      <div class="container-narrow">
+        {{ content }}
+      </div>
+    </div>
+
+    <footer class="project-footer-section">
+      <div class="container-narrow">
+        <a href="/#projects" class="back-link-bottom">
+          <span class="back-arrow">&larr;</span> Back to all projects
+        </a>
+      </div>
+    </footer>
+  </article>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 Aidynbek Mussa. Built with intention.</p>
+      <p>&copy; 2025 Aidynbek Mussa</p>
     </div>
   </footer>
 

@@ -18,6 +18,9 @@
     initSmoothScroll();
     initSkillBars();
     initTimeline();
+    initThemeToggle();
+    initTypewriter();
+    initScrollReveal();
   }
 
   // ================================
@@ -210,6 +213,137 @@
           p.style.opacity = '1';
         });
       });
+    });
+  }
+
+  // ================================
+  // THEME TOGGLE (Dark/Light Mode)
+  // ================================
+
+  function initThemeToggle() {
+    const toggle = document.getElementById('theme-toggle');
+    if (!toggle) return;
+
+    // Check for saved theme or system preference
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    } else if (!systemPrefersDark) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+
+    toggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+
+      // Add transition class for smooth color changes
+      document.body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
+    });
+
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem('theme')) {
+        document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+      }
+    });
+  }
+
+  // ================================
+  // TYPEWRITER EFFECT
+  // ================================
+
+  function initTypewriter() {
+    const element = document.getElementById('typewriter');
+    if (!element) return;
+
+    const titles = [
+      'Chief Analyst',
+      'Data Engineer',
+      'BI Developer',
+      'Economist',
+      'Problem Solver'
+    ];
+
+    let titleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let isPaused = false;
+
+    const typeSpeed = 100;
+    const deleteSpeed = 50;
+    const pauseDuration = 2000;
+
+    function type() {
+      const currentTitle = titles[titleIndex];
+
+      if (isPaused) {
+        isPaused = false;
+        isDeleting = true;
+        setTimeout(type, pauseDuration);
+        return;
+      }
+
+      if (isDeleting) {
+        // Deleting
+        element.textContent = currentTitle.substring(0, charIndex - 1);
+        charIndex--;
+
+        if (charIndex === 0) {
+          isDeleting = false;
+          titleIndex = (titleIndex + 1) % titles.length;
+          setTimeout(type, 500);
+          return;
+        }
+      } else {
+        // Typing
+        element.textContent = currentTitle.substring(0, charIndex + 1);
+        charIndex++;
+
+        if (charIndex === currentTitle.length) {
+          isPaused = true;
+          setTimeout(type, typeSpeed);
+          return;
+        }
+      }
+
+      setTimeout(type, isDeleting ? deleteSpeed : typeSpeed);
+    }
+
+    // Start typewriter after a short delay
+    setTimeout(type, 1000);
+  }
+
+  // ================================
+  // ENHANCED SCROLL REVEAL
+  // ================================
+
+  function initScrollReveal() {
+    const reveals = document.querySelectorAll('.reveal');
+
+    if (!reveals.length) return;
+
+    const revealOptions = {
+      root: null,
+      rootMargin: '0px 0px -100px 0px',
+      threshold: 0.1
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, revealOptions);
+
+    reveals.forEach(reveal => {
+      revealObserver.observe(reveal);
     });
   }
 
