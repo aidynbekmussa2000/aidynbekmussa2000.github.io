@@ -881,6 +881,46 @@ a {
   transform: translate(-50%, -50%);
 }
 
+/* Education vs Work Dots */
+.timeline-dot.education {
+  border-color: #10b981;
+}
+
+.timeline-point:hover .timeline-dot.education {
+  border-color: #10b981;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+}
+
+.timeline-dot.work {
+  border-color: var(--color-accent);
+}
+
+.timeline-point:hover .timeline-dot.work {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+/* Timeline Icon */
+.timeline-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  margin-bottom: var(--space-xs);
+}
+
+.timeline-icon.education {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+
+.timeline-icon.work {
+  background: rgba(59, 130, 246, 0.15);
+  color: var(--color-accent);
+}
+
 /* Connector Line from Dot to Card */
 .timeline-point::before {
   content: '';
@@ -1243,6 +1283,14 @@ a {
 
 [data-theme="light"] .timeline-dot.current {
   background: var(--color-accent);
+}
+
+[data-theme="light"] .timeline-icon.education {
+  background: rgba(16, 185, 129, 0.1);
+}
+
+[data-theme="light"] .timeline-icon.work {
+  background: rgba(59, 130, 246, 0.1);
 }
 
 [data-theme="light"] ::selection {

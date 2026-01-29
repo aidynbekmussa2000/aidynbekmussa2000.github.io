@@ -170,9 +170,9 @@
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Animate progress bar to 85% (current position)
+          // Animate progress bar to 95% (current position)
           setTimeout(() => {
-            progress.style.width = '85%';
+            progress.style.width = '95%';
           }, 300);
 
           // Animate timeline points with stagger
