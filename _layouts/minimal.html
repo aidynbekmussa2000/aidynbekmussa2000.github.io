@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/minimal.css' | relative_url }}">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">AM</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-greeting">Hi, I'm</p>
+        <h1 class="hero-name">Aidynbek Mussa</h1>
+        <p class="hero-title">Data Analyst & Economist</p>
+        <p class="hero-description">
+          I transform complex data into actionable insights.
+          Currently based in New York, building smart solutions
+          with analytics, engineering, and machine learning.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-image">
+          <img src="{{ '/assets/images/bio-photo.jpg' | relative_url }}" alt="Aidynbek Mussa" onerror="this.parentElement.innerHTML='<div class=\'hero-initials\'>AM</div>'">
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">About</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="lead">
+            I'm a data analyst and economist with a passion for solving complex problems through data-driven approaches.
+          </p>
+          <p>
+            With a Master's in Applied Analytics from Columbia University and experience at the National Bank of Kazakhstan, I bring a unique blend of quantitative skills, economic insight, and systems thinking.
+          </p>
+          <p>
+            My work spans macroeconomic forecasting, machine learning, ETL pipeline engineering, and data visualization. I'm particularly interested in how AI can transform education and public policy.
+          </p>
+        </div>
+        <div class="about-details">
+          <div class="detail-card">
+            <h3>Education</h3>
+            <ul>
+              <li>
+                <strong>M.S. Applied Analytics</strong>
+                <span>Columbia University</span>
+              </li>
+              <li>
+                <strong>B.A. Economics & Mathematics</strong>
+                <span>Nazarbayev University</span>
+              </li>
+            </ul>
+          </div>
+          <div class="detail-card">
+            <h3>Location</h3>
+            <p>New York, NY</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section section-alt" id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-icon">01</span>
+            <div class="project-links">
+              <a href="/projects/nyc-crime/" class="project-link" aria-label="View project">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">NYC Crime Clustering</h3>
+          <p class="project-description">
+            Spatial analysis of crime patterns in New York City using K-means clustering and geospatial visualization.
+          </p>
+          <div class="project-tech">
+            <span>Python</span>
+            <span>R</span>
+            <span>Scikit-learn</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-icon">02</span>
+            <div class="project-links">
+              <a href="/projects/gas-price-etl/" class="project-link" aria-label="View project">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">Gasoline Price ETL</h3>
+          <p class="project-description">
+            End-to-end data pipeline and interactive dashboard for tracking gasoline price trends.
+          </p>
+          <div class="project-tech">
+            <span>Python</span>
+            <span>PostgreSQL</span>
+            <span>Tableau</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-icon">03</span>
+            <div class="project-links">
+              <a href="/projects/terrorgraph/" class="project-link" aria-label="View project">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">TerrorGraph</h3>
+          <p class="project-description">
+            Graph database analysis of the Global Terrorism Database using Neo4j for network insights.
+          </p>
+          <div class="project-tech">
+            <span>Neo4j</span>
+            <span>Cypher</span>
+            <span>Python</span>
+          </div>
+        </article>
+
+        <article class="project-card project-wip">
+          <div class="project-header">
+            <span class="project-icon">04</span>
+            <span class="project-badge">In Progress</span>
+          </div>
+          <h3 class="project-title">GetEnglish</h3>
+          <p class="project-description">
+            AI-powered language learning assistant on Telegram for personalized education.
+          </p>
+          <div class="project-tech">
+            <span>Python</span>
+            <span>OpenAI</span>
+            <span>Telegram API</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="section" id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+
+        <div class="skill-category">
+          <h3>Languages</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <span class="skill-name">Python</span>
+              <div class="skill-bar"><div class="skill-fill" style="--fill: 95%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">SQL</span>
+              <div class="skill-bar"><div class="skill-fill" style="--fill: 90%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">R</span>
+              <div class="skill-bar"><div class="skill-fill" style="--fill: 80%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">JavaScript</span>
+              <div class="skill-bar"><div class="skill-fill" style="--fill: 70%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Tools & Technologies</h3>
+          <div class="skill-tags">
+            <span>Pandas</span>
+            <span>NumPy</span>
+            <span>Scikit-learn</span>
+            <span>TensorFlow</span>
+            <span>PostgreSQL</span>
+            <span>Neo4j</span>
+            <span>Tableau</span>
+            <span>Apache Airflow</span>
+            <span>Docker</span>
+            <span>AWS</span>
+            <span>Git</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Expertise</h3>
+          <div class="skill-tags">
+            <span>Machine Learning</span>
+            <span>Data Visualization</span>
+            <span>ETL Pipelines</span>
+            <span>Statistical Analysis</span>
+            <span>Macroeconomic Modeling</span>
+            <span>Geospatial Analysis</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-content">
+        <p class="contact-intro">
+          I'm always open to discussing new projects, creative ideas, or opportunities. Let's connect.
+        </p>
+        <div class="contact-grid">
+          <a href="mailto:aidynbek.mussa@columbia.edu" class="contact-card">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">aidynbek.mussa@columbia.edu</span>
+          </a>
+          <a href="https://linkedin.com/in/aidynbekmussa" target="_blank" rel="noopener" class="contact-card">
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value">aidynbekmussa</span>
+          </a>
+          <a href="https://github.com/aidynbekmussa2000" target="_blank" rel="noopener" class="contact-card">
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">aidynbekmussa2000</span>
+          </a>
+          <a href="https://t.me/aidynthecreator" target="_blank" rel="noopener" class="contact-card">
+            <span class="contact-label">Telegram</span>
+            <span class="contact-value">@aidynthecreator</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Aidynbek Mussa. Built with intention.</p>
+    </div>
+  </footer>
+
+  <script src="{{ '/assets/js/minimal.js' | relative_url }}"></script>
+</body>
+</html>
