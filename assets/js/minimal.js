@@ -161,26 +161,26 @@
   // ================================
 
   function initTimeline() {
-    const timeline = document.querySelector('.timeline-wrapper');
+    const timeline = document.querySelector('.timeline-dual');
     const progress = document.getElementById('timeline-progress');
-    const points = document.querySelectorAll('.timeline-point');
+    const items = document.querySelectorAll('.timeline-item');
 
     if (!timeline || !progress) return;
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Animate progress bar to 95% (current position)
+          // Animate progress bar to 95%
           setTimeout(() => {
             progress.style.width = '95%';
           }, 300);
 
-          // Animate timeline points with stagger
-          points.forEach((point, index) => {
+          // Animate timeline items with stagger
+          items.forEach((item, index) => {
             setTimeout(() => {
-              point.style.opacity = '1';
-              point.style.transform = point.style.transform.replace('translateY(20px)', 'translateY(0)') || 'translateX(-50%)';
-            }, 500 + (index * 250));
+              item.style.opacity = '1';
+              item.style.transform = 'translateX(-50%)';
+            }, 400 + (index * 200));
           });
 
           observer.unobserve(entry.target);
@@ -188,29 +188,27 @@
       });
     }, { threshold: 0.2 });
 
-    // Set initial state for points
-    points.forEach(point => {
-      point.style.opacity = '0';
-      const currentTransform = point.style.transform || '';
-      point.style.transform = currentTransform + ' translateY(20px)';
-      point.style.transition = 'all 0.6s ease';
+    // Set initial state for items
+    items.forEach(item => {
+      item.style.opacity = '0';
+      item.style.transition = 'all 0.6s ease';
     });
 
     observer.observe(timeline);
 
-    // Add hover interaction for timeline points
-    points.forEach(point => {
-      point.addEventListener('mouseenter', () => {
-        points.forEach(p => {
-          if (p !== point) {
-            p.style.opacity = '0.4';
+    // Add hover interaction
+    items.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        items.forEach(i => {
+          if (i !== item) {
+            i.style.opacity = '0.5';
           }
         });
       });
 
-      point.addEventListener('mouseleave', () => {
-        points.forEach(p => {
-          p.style.opacity = '1';
+      item.addEventListener('mouseleave', () => {
+        items.forEach(i => {
+          i.style.opacity = '1';
         });
       });
     });
