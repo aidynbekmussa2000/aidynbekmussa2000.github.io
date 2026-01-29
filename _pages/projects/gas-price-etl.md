@@ -2,47 +2,35 @@
 layout: project
 title: "Gasoline Price ETL & Dashboard"
 permalink: /projects/gas-price-etl/
-summary: "An end-to-end ETL pipeline and interactive dashboard for tracking and analyzing gasoline price trends, helping businesses monitor fuel costs and make data-driven decisions."
+summary: "End-to-end ETL pipeline and interactive dashboard for tracking gasoline price trends, helping businesses monitor fuel costs."
 tech:
   - Python
   - PostgreSQL
   - Apache Airflow
   - Tableau
-  - Docker
 ---
 
 ## Overview
 
-An end-to-end **ETL pipeline** and interactive **dashboard** for tracking and analyzing gasoline price trends. This project helps small businesses monitor fuel costs and make data-driven decisions.
-
-## Dataset
-
-- **Source**: EIA (U.S. Energy Information Administration) API
-- **Frequency**: Weekly updates
-- **Coverage**: National and regional gasoline prices
+An automated data pipeline that extracts gasoline price data from the U.S. Energy Information Administration API, transforms it for analysis, and loads it into a PostgreSQL database. The data powers an interactive Tableau dashboard for monitoring fuel cost trends.
 
 ## Architecture
 
-### Extract
-- Pull data from EIA REST API
-- Handle pagination and rate limits
+**Extract** — Pull weekly data from EIA REST API with pagination and rate limit handling.
 
-### Transform
-- Clean and normalize price data
-- Calculate rolling averages and trends
-- Aggregate by region and fuel type
+**Transform** — Clean and normalize prices, calculate rolling averages, aggregate by region and fuel type.
 
-### Load
-- Store in PostgreSQL database
-- Maintain historical records
+**Load** — Store in PostgreSQL with historical records for trend analysis.
 
-### Visualize
-- Tableau dashboard for real-time monitoring
-- Trend analysis and forecasting views
+**Visualize** — Tableau dashboard with real-time monitoring and forecasting views.
 
-## Key Features
+## Features
 
-- Automated daily data refresh
-- Historical price comparison
+- Automated weekly data refresh via Apache Airflow
+- Historical price comparison across regions
 - Regional price differential analysis
-- Price forecasting using time-series models
+- Time-series forecasting for price predictions
+
+## Outcome
+
+The dashboard helps businesses track fuel costs and identify optimal purchasing windows, providing data-driven insights for operational planning.

@@ -2,7 +2,7 @@
 layout: project
 title: "NYC Crime Clustering Analysis"
 permalink: /projects/nyc-crime/
-summary: "Exploring spatiotemporal crime trends in New York City from 2006 to 2023 using unsupervised machine learning to uncover how crime patterns evolved before and after the COVID-19 pandemic."
+summary: "Exploring spatiotemporal crime trends in New York City using unsupervised machine learning to uncover patterns before and after COVID-19."
 tech:
   - Python
   - R
@@ -12,43 +12,28 @@ tech:
 
 ## Overview
 
-This project explores spatiotemporal crime trends in New York City from 2006 to 2023 using **unsupervised machine learning**. The aim is to uncover how crime patterns evolved before and after the COVID-19 pandemic.
-
-We applied **K-means and hierarchical clustering** to complaint-level NYPD data and visualized borough-specific changes using R.
+This project analyzes spatiotemporal crime trends in New York City from 2006 to 2023. Using K-means and hierarchical clustering on NYPD complaint data, I uncovered how crime patterns evolved before and after the COVID-19 pandemic.
 
 ## Dataset
 
-- **Source**: NYPD Complaint Historic Data
-- **Scope**: Over 8 million observations
-- **Features used**:
-  - Date of crime
-  - Borough
-  - Offense category
-  - Latitude/Longitude
-  - Complaint type
+- **Source:** NYPD Complaint Historic Data
+- **Size:** 8+ million observations
+- **Features:** Date, borough, offense category, coordinates, complaint type
 
 ## Methodology
 
-### Data Cleaning
-- Filtered felonies/misdemeanors
-- Parsed timestamps
-- Removed NA coordinates
+**Data Cleaning** — Filtered felonies and misdemeanors, parsed timestamps, removed invalid coordinates.
 
-### Feature Engineering
-- Extracted hour, weekday, year
-- Categorized crimes (violent vs. property)
+**Feature Engineering** — Extracted temporal features (hour, weekday, year) and categorized crimes into violent vs. property.
 
-### Clustering
-- Applied K-means (elbow method for k)
-- Performed hierarchical clustering with Ward's method
-- Standardized features for comparison
+**Clustering** — Applied K-means with elbow method for optimal k, performed hierarchical clustering using Ward's method.
 
 ## Key Findings
 
-- Crime in **Manhattan** and **Brooklyn** showed a shift in density post-2020
-- Clusters highlighted **increase in nighttime assaults** and **weekend crime spikes**
-- Pandemic led to redistribution of property crime clusters, likely due to lockdown and reduced mobility
+- Crime density shifted in Manhattan and Brooklyn post-2020
+- Identified increase in nighttime assaults and weekend crime spikes
+- Property crime clusters redistributed during lockdown periods
 
 ## Outcome
 
-This clustering-based analysis revealed actionable patterns for urban policy and law enforcement allocation. It demonstrates how machine learning can aid public safety decisions.
+The analysis revealed actionable patterns for urban policy and law enforcement resource allocation, demonstrating how machine learning can support public safety decisions.
