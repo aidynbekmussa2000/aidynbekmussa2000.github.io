@@ -130,100 +130,88 @@
 
       <!-- Dual Timeline -->
       <div class="timeline-dual">
-        <!-- Education Row (Above) -->
-        <div class="timeline-row education-row">
-          <div class="timeline-item" style="left: 12%;">
-            <div class="timeline-card-top">
-              <div class="timeline-logo">
-                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/forty/Nazarbayev_University_Logo.svg/1200px-Nazarbayev_University_Logo.svg.png" alt="NU" onerror="this.parentElement.innerHTML='<span class=\"logo-fallback\">NU</span>'">
-              </div>
-              <span class="timeline-date">2019 - 2023</span>
-              <h3 class="timeline-title">B.A. Economics</h3>
-              <p class="timeline-company">Nazarbayev University</p>
-              <p class="timeline-desc">Minor in Mathematics</p>
+
+        <!-- Education Row (Above the line) -->
+        <div class="timeline-row-top">
+          <div class="tl-item" style="left: 10%;">
+            <div class="tl-card">
+              <div class="tl-logo nu">NU</div>
+              <span class="tl-date edu">2019 - 2023</span>
+              <h3 class="tl-title">B.A. Economics</h3>
+              <p class="tl-company">Nazarbayev University</p>
+              <p class="tl-desc">Minor in Mathematics</p>
             </div>
-            <div class="timeline-connector top"></div>
-            <div class="timeline-dot education"></div>
+            <div class="tl-stem edu"></div>
+            <div class="tl-dot edu"></div>
           </div>
 
-          <div class="timeline-item" style="left: 73%;">
-            <div class="timeline-card-top">
-              <div class="timeline-logo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Columbia_University_seal.svg/1200px-Columbia_University_seal.svg.png" alt="Columbia" onerror="this.parentElement.innerHTML='<span class=\"logo-fallback\">CU</span>'">
-              </div>
-              <span class="timeline-date">Sep 2024 - 2025</span>
-              <h3 class="timeline-title">M.S. Applied Analytics</h3>
-              <p class="timeline-company">Columbia University</p>
-              <p class="timeline-desc">Data Analytics & ML</p>
+          <div class="tl-item" style="left: 75%;">
+            <div class="tl-card">
+              <div class="tl-logo columbia">CU</div>
+              <span class="tl-date edu">Sep 2024 - 2025</span>
+              <h3 class="tl-title">M.S. Applied Analytics</h3>
+              <p class="tl-company">Columbia University</p>
+              <p class="tl-desc">Data Analytics & ML</p>
             </div>
-            <div class="timeline-connector top"></div>
-            <div class="timeline-dot education"></div>
+            <div class="tl-stem edu"></div>
+            <div class="tl-dot edu"></div>
           </div>
         </div>
 
-        <!-- Timeline Line -->
-        <div class="timeline-center">
+        <!-- Timeline Center Line -->
+        <div class="timeline-axis">
           <div class="timeline-years">
             <span>2019</span>
             <span>2021</span>
             <span>2023</span>
             <span>2025</span>
           </div>
-          <div class="timeline-line-main">
-            <div class="timeline-line-progress" id="timeline-progress"></div>
+          <div class="timeline-track">
+            <div class="timeline-progress" id="timeline-progress"></div>
           </div>
         </div>
 
-        <!-- Work Row (Below) -->
-        <div class="timeline-row work-row">
-          <div class="timeline-item" style="left: 32%;">
-            <div class="timeline-dot work"></div>
-            <div class="timeline-connector bottom"></div>
-            <div class="timeline-card-bottom">
-              <div class="timeline-logo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/EY_logo_2019.svg/1200px-EY_logo_2019.svg.png" alt="EY" onerror="this.parentElement.innerHTML='<span class=\"logo-fallback ey\">EY</span>'">
-              </div>
-              <span class="timeline-date">Dec 2022 - Jun 2023</span>
-              <h3 class="timeline-title">Analyst</h3>
-              <p class="timeline-company">Ernst & Young</p>
-              <p class="timeline-desc">Financial consulting</p>
-              <h3 class="timeline-title">Intern Consultant</h3>
-              <p class="timeline-company">EY (Ernst & Young)</p>
-              <p class="timeline-desc">Financial analysis and consulting</p>
+        <!-- Work Row (Below the line) -->
+        <div class="timeline-row-bottom">
+          <div class="tl-item" style="left: 30%;">
+            <div class="tl-dot work"></div>
+            <div class="tl-stem work"></div>
+            <div class="tl-card">
+              <div class="tl-logo ey">EY</div>
+              <span class="tl-date work">Dec 2022 - Jun 2023</span>
+              <h3 class="tl-title">Intern Consultant</h3>
+              <p class="tl-company">Ernst & Young</p>
+              <p class="tl-desc">Financial consulting</p>
             </div>
           </div>
 
-          <div class="timeline-item" style="left: 52%;">
-            <div class="timeline-dot work"></div>
-            <div class="timeline-connector bottom"></div>
-            <div class="timeline-card-bottom">
-              <div class="timeline-logo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Emblem_of_the_National_Bank_of_Kazakhstan.svg/1200px-Emblem_of_the_National_Bank_of_Kazakhstan.svg.png" alt="NBK" onerror="this.parentElement.innerHTML='<span class=\"logo-fallback\">NBK</span>'">
-              </div>
-              <span class="timeline-date">Jul 2023 - Jun 2024</span>
-              <h3 class="timeline-title">Analyst</h3>
-              <p class="timeline-company">National Bank of Kazakhstan</p>
-              <p class="timeline-desc">Macroeconomic forecasting</p>
+          <div class="tl-item" style="left: 52%;">
+            <div class="tl-dot work"></div>
+            <div class="tl-stem work"></div>
+            <div class="tl-card">
+              <div class="tl-logo nbk">NBK</div>
+              <span class="tl-date work">Jul 2023 - Jun 2024</span>
+              <h3 class="tl-title">Analyst</h3>
+              <p class="tl-company">National Bank of Kazakhstan</p>
+              <p class="tl-desc">Macroeconomic forecasting</p>
             </div>
           </div>
 
-          <div class="timeline-item active" style="left: 88%;">
-            <div class="timeline-dot work current"></div>
-            <div class="timeline-connector bottom"></div>
-            <div class="timeline-card-bottom">
-              <div class="timeline-logo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Emblem_of_the_National_Bank_of_Kazakhstan.svg/1200px-Emblem_of_the_National_Bank_of_Kazakhstan.svg.png" alt="NBK" onerror="this.parentElement.innerHTML='<span class=\"logo-fallback\">NBK</span>'">
-              </div>
-              <span class="timeline-date">Jul 2024 - Present</span>
-              <h3 class="timeline-title">Chief Analyst</h3>
-              <p class="timeline-company">National Bank of Kazakhstan</p>
-              <p class="timeline-desc">Leading analytics</p>
-              <span class="timeline-badge">Current</span>
+          <div class="tl-item current" style="left: 88%;">
+            <div class="tl-dot work current"></div>
+            <div class="tl-stem work"></div>
+            <div class="tl-card">
+              <div class="tl-logo nbk">NBK</div>
+              <span class="tl-date work">Jul 2024 - Present</span>
+              <h3 class="tl-title">Chief Analyst</h3>
+              <p class="tl-company">National Bank of Kazakhstan</p>
+              <p class="tl-desc">Leading analytical projects</p>
+              <span class="tl-badge">Current</span>
             </div>
           </div>
         </div>
+
       </div>
-
     </div>
   </section>
 

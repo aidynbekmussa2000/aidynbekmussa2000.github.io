@@ -133,55 +133,40 @@
   function initTimeline() {
     const timeline = document.querySelector('.timeline-dual');
     const progress = document.getElementById('timeline-progress');
-    const items = document.querySelectorAll('.timeline-item');
+    const items = document.querySelectorAll('.tl-item');
 
-    if (!timeline || !progress) return;
+    if (!timeline) return;
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Animate progress bar to 95%
-          setTimeout(() => {
-            progress.style.width = '95%';
-          }, 300);
+          // Animate progress bar
+          if (progress) {
+            setTimeout(() => {
+              progress.style.width = '95%';
+            }, 300);
+          }
 
           // Animate timeline items with stagger
           items.forEach((item, index) => {
             setTimeout(() => {
               item.style.opacity = '1';
               item.style.transform = 'translateX(-50%)';
-            }, 400 + (index * 200));
+            }, 300 + (index * 150));
           });
 
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.1 });
 
     // Set initial state for items
     items.forEach(item => {
       item.style.opacity = '0';
-      item.style.transition = 'all 0.6s ease';
+      item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     });
 
     observer.observe(timeline);
-
-    // Add hover interaction
-    items.forEach(item => {
-      item.addEventListener('mouseenter', () => {
-        items.forEach(i => {
-          if (i !== item) {
-            i.style.opacity = '0.5';
-          }
-        });
-      });
-
-      item.addEventListener('mouseleave', () => {
-        items.forEach(i => {
-          i.style.opacity = '1';
-        });
-      });
-    });
   }
 
   // ================================
