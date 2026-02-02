@@ -1367,6 +1367,57 @@ a {
   display: block;
 }
 
+/* ================================
+   LANGUAGE TOGGLE
+   ================================ */
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 12px;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.lang-toggle:hover {
+  border-color: var(--color-text-muted);
+  background: var(--color-surface);
+}
+
+.lang-toggle .lang-en,
+.lang-toggle .lang-ru {
+  transition: all var(--transition);
+}
+
+/* Default: English active */
+.lang-toggle .lang-en {
+  color: var(--color-accent);
+}
+
+.lang-toggle .lang-ru {
+  color: var(--color-text-muted);
+  display: none;
+}
+
+/* Russian active */
+[data-lang="ru"] .lang-toggle .lang-en {
+  display: none;
+}
+
+[data-lang="ru"] .lang-toggle .lang-ru {
+  display: inline;
+  color: var(--color-accent);
+}
+
 /* Hero title styling */
 .hero-title {
   color: var(--color-text-secondary);
