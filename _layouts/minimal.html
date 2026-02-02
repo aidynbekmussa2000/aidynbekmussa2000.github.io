@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,10 +10,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/minimal.css' | relative_url }}">
   <script>
-    // Set theme immediately to prevent flash
+    // Set theme and language immediately to prevent flash
     (function() {
       var theme = localStorage.getItem('theme') || 'dark';
+      var lang = localStorage.getItem('lang') || 'en';
       document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.setAttribute('data-lang', lang);
     })();
   </script>
 </head>
@@ -23,13 +25,17 @@
     <div class="nav-container">
       <a href="/" class="nav-logo">AM</a>
       <div class="nav-links">
-        <a href="/#about">About</a>
-        <a href="/#experience">Experience</a>
-        <a href="/#projects">Projects</a>
-        <a href="/#skills">Skills</a>
-        <a href="/#contact">Contact</a>
+        <a href="/#about" data-i18n="nav.about">About</a>
+        <a href="/#experience" data-i18n="nav.experience">Experience</a>
+        <a href="/#projects" data-i18n="nav.projects">Projects</a>
+        <a href="/#skills" data-i18n="nav.skills">Skills</a>
+        <a href="/#contact" data-i18n="nav.contact">Contact</a>
       </div>
       <div class="nav-actions">
+        <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
+          <span class="lang-en">EN</span>
+          <span class="lang-ru">RU</span>
+        </button>
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
           <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="5"/>
@@ -39,7 +45,7 @@
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
           </svg>
         </button>
-          <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
           <span></span>
           <span></span>
         </button>
@@ -49,28 +55,28 @@
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobile-menu">
-    <a href="/#about">About</a>
-    <a href="/#experience">Experience</a>
-    <a href="/#projects">Projects</a>
-    <a href="/#skills">Skills</a>
-    <a href="/#contact">Contact</a>
+    <a href="/#about" data-i18n="nav.about">About</a>
+    <a href="/#experience" data-i18n="nav.experience">Experience</a>
+    <a href="/#projects" data-i18n="nav.projects">Projects</a>
+    <a href="/#skills" data-i18n="nav.skills">Skills</a>
+    <a href="/#contact" data-i18n="nav.contact">Contact</a>
   </div>
 
   <!-- Hero Section -->
   <section class="hero" id="hero">
     <div class="container">
       <div class="hero-content">
-        <p class="hero-greeting">Hi, I'm</p>
+        <p class="hero-greeting" data-i18n="hero.greeting">Hi, I'm</p>
         <h1 class="hero-name">Aidynbek Mussa</h1>
-        <p class="hero-title">Data Analyst & Economist</p>
-        <p class="hero-description">
+        <p class="hero-title" data-i18n="hero.title">Data Analyst & Economist</p>
+        <p class="hero-description" data-i18n="hero.description">
           I transform complex data into actionable insights.
           Currently based in Astana, Kazakhstan, building smart solutions
           with analytics, engineering, BI, and machine learning.
         </p>
         <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+          <a href="#projects" class="btn btn-primary" data-i18n="hero.viewProjects">View Projects</a>
+          <a href="#contact" class="btn btn-secondary" data-i18n="hero.getInTouch">Get in Touch</a>
         </div>
       </div>
       <div class="hero-visual">
@@ -87,36 +93,36 @@
   <!-- About Section -->
   <section class="section reveal" id="about">
     <div class="container">
-      <h2 class="section-title">About</h2>
+      <h2 class="section-title" data-i18n="about.title">About</h2>
       <div class="about-grid">
         <div class="about-text">
-          <p class="lead">
+          <p class="lead" data-i18n="about.lead">
             I'm a data analyst and economist with a passion for solving complex problems through data-driven approaches.
           </p>
-          <p>
+          <p data-i18n="about.p1">
             With a Master's in Applied Analytics from Columbia University and experience at the National Bank of Kazakhstan, I bring a unique blend of quantitative skills, economic insight, and systems thinking.
           </p>
-          <p>
-            My work spans macroeconomic forecasting, machine learning, ETL pipeline engineering, and data visualization. I'm particularly interested in how AI can improve analytics and business .
+          <p data-i18n="about.p2">
+            My work spans macroeconomic forecasting, machine learning, ETL pipeline engineering, and data visualization. I'm particularly interested in how AI can improve analytics and business.
           </p>
         </div>
         <div class="about-details">
           <div class="detail-card">
-            <h3>Education</h3>
+            <h3 data-i18n="about.education">Education</h3>
             <ul>
               <li>
-                <strong>M.S. Applied Analytics</strong>
+                <strong data-i18n="about.ms">M.S. Applied Analytics</strong>
                 <span>Columbia University</span>
               </li>
               <li>
-                <strong>B.A. Economics & Mathematics</strong>
+                <strong data-i18n="about.ba">B.A. Economics & Mathematics</strong>
                 <span>Nazarbayev University</span>
               </li>
             </ul>
           </div>
           <div class="detail-card">
-            <h3>Location</h3>
-            <p>Astana, Kazakhstan</p>
+            <h3 data-i18n="about.location">Location</h3>
+            <p data-i18n="about.locationValue">Astana, Kazakhstan</p>
           </div>
         </div>
       </div>
@@ -126,7 +132,7 @@
   <!-- Experience Timeline Section -->
   <section class="section section-alt reveal" id="experience">
     <div class="container">
-      <h2 class="section-title">Experience & Education</h2>
+      <h2 class="section-title" data-i18n="experience.title">Experience & Education</h2>
 
       <!-- Dual Timeline -->
       <div class="timeline-dual">
@@ -139,9 +145,9 @@
                 <img src="/assets/images/logos/nu-logo.jpg" alt="Nazarbayev University">
               </div>
               <span class="tl-date edu">2019 - 2023</span>
-              <h3 class="tl-title">B.A. Economics</h3>
+              <h3 class="tl-title" data-i18n="timeline.baEcon">B.A. Economics</h3>
               <p class="tl-company">Nazarbayev University</p>
-              <p class="tl-desc">Minor in Mathematics</p>
+              <p class="tl-desc" data-i18n="timeline.minorMath">Minor in Mathematics</p>
             </div>
             <div class="tl-stem edu"></div>
             <div class="tl-dot edu"></div>
@@ -153,9 +159,9 @@
                 <img src="/assets/images/logos/columbia-logo.png" alt="Columbia University">
               </div>
               <span class="tl-date edu">Sep 2024 - 2025</span>
-              <h3 class="tl-title">M.S. Applied Analytics</h3>
+              <h3 class="tl-title" data-i18n="timeline.msAnalytics">M.S. Applied Analytics</h3>
               <p class="tl-company">Columbia University</p>
-              <p class="tl-desc">Data Analytics & ML</p>
+              <p class="tl-desc" data-i18n="timeline.dataML">Data Analytics & ML</p>
             </div>
             <div class="tl-stem edu"></div>
             <div class="tl-dot edu"></div>
@@ -185,9 +191,9 @@
                 <img src="/assets/images/logos/ey-logo.png" alt="Ernst&Young">
               </div>
               <span class="tl-date work">Dec 2022 - Jun 2023</span>
-              <h3 class="tl-title">Intern Consultant</h3>
+              <h3 class="tl-title" data-i18n="timeline.internConsultant">Intern Consultant</h3>
               <p class="tl-company">Ernst & Young</p>
-              <p class="tl-desc">Financial consulting</p>
+              <p class="tl-desc" data-i18n="timeline.finConsulting">Financial consulting</p>
             </div>
           </div>
 
@@ -199,9 +205,9 @@
                 <img src="/assets/images/logos/nbk-logo.jpg" alt="National Bank of Kazakhstan">
               </div>
               <span class="tl-date work">Jul 2023 - Jun 2024</span>
-              <h3 class="tl-title">Analyst</h3>
-              <p class="tl-company">National Bank of Kazakhstan</p>
-              <p class="tl-desc">Macroeconomic forecasting</p>
+              <h3 class="tl-title" data-i18n="timeline.analyst">Analyst</h3>
+              <p class="tl-company" data-i18n="timeline.nbk">National Bank of Kazakhstan</p>
+              <p class="tl-desc" data-i18n="timeline.macroForecast">Macroeconomic forecasting</p>
             </div>
           </div>
 
@@ -212,11 +218,11 @@
               <div class="tl-logo">
                 <img src="/assets/images/logos/nbk-logo.jpg" alt="National Bank of Kazakhstan">
               </div>
-              <span class="tl-date work">Jul 2024 - Present</span>
-              <h3 class="tl-title">Chief Analyst</h3>
-              <p class="tl-company">National Bank of Kazakhstan</p>
-              <p class="tl-desc">Leading analytical projects</p>
-              <span class="tl-badge">Current</span>
+              <span class="tl-date work">Jul 2024 - <span data-i18n="timeline.present">Present</span></span>
+              <h3 class="tl-title" data-i18n="timeline.chiefAnalyst">Chief Analyst</h3>
+              <p class="tl-company" data-i18n="timeline.nbk">National Bank of Kazakhstan</p>
+              <p class="tl-desc" data-i18n="timeline.leadingAnalytics">Leading analytical projects</p>
+              <span class="tl-badge" data-i18n="timeline.current">Current</span>
             </div>
           </div>
         </div>
@@ -228,7 +234,7 @@
   <!-- Projects Section -->
   <section class="section reveal" id="projects">
     <div class="container">
-      <h2 class="section-title">Projects</h2>
+      <h2 class="section-title" data-i18n="projects.title">Projects</h2>
       <div class="projects-grid">
 
         <article class="project-card">
@@ -242,8 +248,8 @@
               </a>
             </div>
           </div>
-          <h3 class="project-title">NYC Crime Clustering</h3>
-          <p class="project-description">
+          <h3 class="project-title" data-i18n="projects.nycTitle">NYC Crime Clustering</h3>
+          <p class="project-description" data-i18n="projects.nycDesc">
             Spatial analysis of crime patterns in New York City using K-means clustering and geospatial visualization.
           </p>
           <div class="project-tech">
@@ -264,8 +270,8 @@
               </a>
             </div>
           </div>
-          <h3 class="project-title">Gasoline Price ETL</h3>
-          <p class="project-description">
+          <h3 class="project-title" data-i18n="projects.gasTitle">Gasoline Price ETL</h3>
+          <p class="project-description" data-i18n="projects.gasDesc">
             End-to-end data pipeline and interactive dashboard for tracking gasoline price trends.
           </p>
           <div class="project-tech">
@@ -286,8 +292,8 @@
               </a>
             </div>
           </div>
-          <h3 class="project-title">Power BI Dashboard</h3>
-          <p class="project-description">
+          <h3 class="project-title" data-i18n="projects.pbiTitle">Power BI Dashboard</h3>
+          <p class="project-description" data-i18n="projects.pbiDesc">
             Interactive business intelligence dashboard with data visualization and analytics insights.
           </p>
           <div class="project-tech">
@@ -300,10 +306,10 @@
         <article class="project-card project-wip">
           <div class="project-header">
             <span class="project-icon">04</span>
-            <span class="project-badge">In Progress</span>
+            <span class="project-badge" data-i18n="projects.inProgress">In Progress</span>
           </div>
           <h3 class="project-title">GetEnglish</h3>
-          <p class="project-description">
+          <p class="project-description" data-i18n="projects.getEnglishDesc">
             AI-powered language learning assistant on Telegram for personalized education.
           </p>
           <div class="project-tech">
@@ -320,11 +326,11 @@
   <!-- Skills Section -->
   <section class="section section-alt reveal" id="skills">
     <div class="container">
-      <h2 class="section-title">Skills</h2>
+      <h2 class="section-title" data-i18n="skills.title">Skills</h2>
       <div class="skills-grid">
 
         <div class="skill-category">
-          <h3>Languages</h3>
+          <h3 data-i18n="skills.languages">Languages</h3>
           <div class="skill-list">
             <div class="skill-item">
               <span class="skill-name">Python</span>
@@ -346,7 +352,7 @@
         </div>
 
         <div class="skill-category">
-          <h3>Tools & Technologies</h3>
+          <h3 data-i18n="skills.tools">Tools & Technologies</h3>
           <div class="skill-tags">
             <span>Power BI</span>
             <span>Tableau</span>
@@ -363,14 +369,14 @@
         </div>
 
         <div class="skill-category">
-          <h3>Expertise</h3>
+          <h3 data-i18n="skills.expertise">Expertise</h3>
           <div class="skill-tags">
-            <span>Machine Learning</span>
-            <span>Data Visualization</span>
-            <span>ETL Pipelines</span>
-            <span>Statistical Analysis</span>
-            <span>Macroeconomic Modeling</span>
-            <span>Geospatial Analysis</span>
+            <span data-i18n="skills.ml">Machine Learning</span>
+            <span data-i18n="skills.dataViz">Data Visualization</span>
+            <span data-i18n="skills.etl">ETL Pipelines</span>
+            <span data-i18n="skills.stats">Statistical Analysis</span>
+            <span data-i18n="skills.macro">Macroeconomic Modeling</span>
+            <span data-i18n="skills.geo">Geospatial Analysis</span>
           </div>
         </div>
 
@@ -381,9 +387,9 @@
   <!-- Contact Section -->
   <section class="section reveal" id="contact">
     <div class="container">
-      <h2 class="section-title">Contact</h2>
+      <h2 class="section-title" data-i18n="contact.title">Contact</h2>
       <div class="contact-content">
-        <p class="contact-intro">
+        <p class="contact-intro" data-i18n="contact.intro">
           I'm always open to discussing new projects, creative ideas, or opportunities. Let's connect.
         </p>
         <div class="contact-grid">
@@ -411,7 +417,7 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 Aidynbek Mussa. Built with intention.</p>
+      <p data-i18n="footer.copyright">&copy; 2025 Aidynbek Mussa. Built with intention.</p>
     </div>
   </footer>
 
