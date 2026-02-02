@@ -1024,39 +1024,64 @@ a {
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    padding-left: var(--space-lg);
+    position: relative;
+  }
+
+  /* Vertical line on the left */
+  .timeline-row-top::after,
+  .timeline-row-bottom::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 28px;
+    bottom: 20px;
+    width: 2px;
+    background: var(--color-border);
+  }
+
+  .timeline-row-top::after {
+    background: linear-gradient(to bottom, #10b981, var(--color-border));
+  }
+
+  .timeline-row-bottom::after {
+    background: linear-gradient(to bottom, var(--color-accent), var(--color-border));
   }
 
   .timeline-row-top::before {
     content: 'Education';
     display: block;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: #10b981;
-    margin-bottom: var(--space-xs);
+    margin-bottom: var(--space-sm);
+    padding-left: var(--space-md);
   }
 
   .timeline-row-bottom::before {
     content: 'Work Experience';
     display: block;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: var(--color-accent);
-    margin-bottom: var(--space-xs);
+    margin-bottom: var(--space-sm);
+    padding-left: var(--space-md);
   }
 
   .tl-item {
     position: relative;
     left: 0 !important;
-    transform: none;
+    transform: none !important;
     width: 100%;
     flex-direction: row;
     align-items: flex-start;
     gap: var(--space-sm);
+    opacity: 1 !important;
   }
 
   .tl-stem {
@@ -1064,18 +1089,75 @@ a {
   }
 
   .tl-dot {
-    margin-top: var(--space-sm);
+    position: absolute;
+    left: calc(-1 * var(--space-lg));
+    top: var(--space-sm);
+    margin: 0;
+    flex-shrink: 0;
   }
 
   .tl-card {
     text-align: left;
     flex: 1;
+    padding: var(--space-sm);
   }
 
   .tl-logo {
-    margin: 0 0 var(--space-xs) 0;
-    width: 32px;
-    height: 32px;
+    display: inline-flex;
+    margin: 0 var(--space-xs) 0 0;
+    width: 28px;
+    height: 28px;
+    float: left;
+  }
+
+  .tl-logo img {
+    border-radius: 4px;
+  }
+
+  .tl-title {
+    font-size: 0.9rem;
+  }
+
+  .tl-company {
+    font-size: 0.8rem;
+  }
+
+  .tl-date {
+    font-size: 0.65rem;
+  }
+
+  .tl-desc {
+    clear: both;
+    font-size: 0.75rem;
+    margin-top: var(--space-xs);
+  }
+
+  .tl-badge {
+    font-size: 0.55rem;
+    padding: 2px 6px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .timeline-row-top,
+  .timeline-row-bottom {
+    padding-left: var(--space-md);
+  }
+
+  .tl-dot {
+    left: calc(-1 * var(--space-md));
+    width: 10px;
+    height: 10px;
+  }
+
+  .tl-card {
+    padding: var(--space-xs);
+  }
+
+  .tl-logo {
+    width: 24px;
+    height: 24px;
   }
 }
 
